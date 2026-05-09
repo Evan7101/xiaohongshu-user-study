@@ -28,8 +28,9 @@ async function getTenantAccessToken(appId, appSecret) {
 }
 
 async function createRecord(token, appToken, tableId, fields) {
+  // 使用新版 Base API (base/v1) 替代旧版 bitable/v1
   const res = await fetch(
-    `${FEISHU_BASE}/bitable/v1/apps/${appToken}/tables/${tableId}/records`,
+    `${FEISHU_BASE}/base/v1/apps/${appToken}/tables/${tableId}/records`,
     {
       method: 'POST',
       headers: {
