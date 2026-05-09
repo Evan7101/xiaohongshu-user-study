@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>社交媒体内容体验研究</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 进度条 -->
+        <div id="progress-bar" class="hidden">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <!-- Step 1: 知情同意 -->
+        <section id="step-consent" class="step">
+            <div class="consent-box">
+                <h1>欢迎参与</h1>
+                <p class="consent-text">
+                    你好！我们正在进行一项关于<strong>社交媒体内容体验</strong>的学术研究。
+                </p>
+                <p class="consent-text">
+                    在接下来的任务中，你需要像平常刷小红书一样浏览几个用户主页，并对内容给出评价。之后还有一组图片判断小任务。
+                </p>
+                <p class="consent-text">
+                    整个过程大约需要 <strong>10-15 分钟</strong>。你的回答仅用于学术研究，完全匿名，请根据真实感受填写。
+                </p>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="consent-age">
+                        <span>我已年满18周岁，自愿参与本研究。</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="consent-data">
+                        <span>我同意匿名使用我的评价数据用于学术研究。</span>
+                    </label>
+                </div>
+                <button id="btn-start" class="btn-primary" disabled>开始</button>
+            </div>
+        </section>
+
+        <!-- Step 2: Section A 介绍 -->
+        <section id="step-sectionA-intro" class="step hidden">
+            <div class="intro-box">
+                <h2>第一部分：用户主页评价</h2>
+                <p>接下来你会看到 <strong>5 个</strong>小红书用户。</p>
+                <p>对每个用户，我们会先展示 ta 的<strong>个人资料</strong>，然后展示 ta 的<strong>主页帖子</strong>。</p>
+                <p>你可以随时回退查看个人资料。充分浏览后，点击<strong>"我已充分浏览，可以开始评价"</strong>，回答几个关于该用户的问题。</p>
+                <button id="btn-sectionA-begin" class="btn-primary">开始第一部分</button>
+            </div>
+        </section>
+
+        <!-- Step 3: Profile 展示 -->
+        <section id="step-profile" class="step hidden">
+            <div class="profile-header">
+                <span class="profile-tag">个人资料</span>
+            </div>
+            <div id="profile-content" class="profile-content"></div>
+            <div class="profile-actions">
+                <button id="btn-view-homepage" class="btn-primary">查看该用户的主页帖子 →</button>
+            </div>
+        </section>
+
+        <!-- Step 4: 用户主页展示 -->
+        <section id="step-homepage" class="step hidden">
+            <div id="homepage-header" class="homepage-header"></div>
+            <div class="homepage-tabs">
+                <span class="tab active">笔记</span>
+                <span class="tab">收藏</span>
+            </div>
+            <div id="homepage-posts" class="homepage-posts"></div>
+            <div class="homepage-actions">
+                <button id="btn-back-profile" class="btn-secondary">← 返回查看个人资料</button>
+                <button id="btn-ready-rate" class="btn-primary">我已充分浏览，可以开始评价 →</button>
+            </div>
+        </section>
+
+        <!-- 帖子详情弹窗 -->
+        <div id="post-modal" class="modal hidden">
+            <div class="modal-content">
+                <button id="btn-close-modal" class="modal-close">✕</button>
+                <div id="modal-body" class="modal-body"></div>
+            </div>
+        </div>
+
+        <!-- Step 5: 评分页面 -->
+        <section id="step-rating" class="step hidden">
+            <div class="rating-box">
+                <h3>请评价以下说法</h3>
+                <div id="rating-questions" class="rating-questions"></div>
+                <div class="rating-comment">
+                    <label>这个账号有没有让你觉得"不符合常理"的地方？（选填）</label>
+                    <textarea id="rating-comment" rows="3" placeholder="请简要描述..."></textarea>
+                </div>
+                <button id="btn-submit-rating" class="btn-primary">用户<span id="rating-user-num">1</span>评价完成</button>
+            </div>
+        </section>
+
+        <!-- Step 6: Section B 介绍 -->
+        <section id="step-sectionB-intro" class="step hidden">
+            <div class="intro-box">
+                <h2>第二部分：图片判断任务</h2>
+                <p>第一部分已完成。接下来是图片判断任务。</p>
+                <p>我们会向你展示 <strong>30 张</strong>照片，请凭直觉判断每张照片是真实生活中拍摄的，还是由AI生成的。</p>
+                <p><strong>请尽量做出判断，不要选中间选项。</strong></p>
+                <button id="btn-sectionB-begin" class="btn-primary">开始第二部分</button>
+            </div>
+        </section>
+
+        <!-- Step 7-9: 单张图片判别 -->
+        <section id="step-image-judge" class="step hidden">
+            <div class="image-judge-box">
+                <div class="image-counter">
+                    第 <span id="judge-current">1</span> / <span id="judge-total">30</span> 张
+                </div>
+                <div id="judge-image-container" class="judge-image-container">
+                    <img id="judge-image" src="" alt="待判断图片" loading="lazy">
+                </div>
+                <div class="judge-question">
+                    <p>你觉得这张照片是？</p>
+                    <div class="judge-options">
+                        <label class="judge-option">
+                            <input type="radio" name="judge" value="1">
+                            <span>① 肯定是真实拍摄的照片</span>
+                        </label>
+                        <label class="judge-option">
+                            <input type="radio" name="judge" value="2">
+                            <span>② 可能是真实拍摄的照片</span>
+                        </label>
+                        <label class="judge-option">
+                            <input type="radio" name="judge" value="3">
+                            <span>③ 可能是AI生成的图片</span>
+                        </label>
+                        <label class="judge-option">
+                            <input type="radio" name="judge" value="4">
+                            <span>④ 肯定是AI生成的图片</span>
+                        </label>
+                    </div>
+                </div>
+                <button id="btn-next-image" class="btn-primary" disabled>下一张 →</button>
+            </div>
+        </section>
+
+        <!-- Step 10: 后测问卷 -->
+        <section id="step-postsurvey" class="step hidden">
+            <div class="survey-box">
+                <h2>最后几个问题</h2>
+                <div class="survey-question">
+                    <p class="survey-label">Q1. 你平时使用小红书的频率是？</p>
+                    <div class="survey-options">
+                        <label class="survey-option">
+                            <input type="radio" name="q6" value="A">
+                            <span>每天多次（重度用户）</span>
+                        </label>
+                        <label class="survey-option">
+                            <input type="radio" name="q6" value="B">
+                            <span>每天一次（较活跃）</span>
+                        </label>
+                        <label class="survey-option">
+                            <input type="radio" name="q6" value="C">
+                            <span>每周几次（轻度用户）</span>
+                        </label>
+                        <label class="survey-option">
+                            <input type="radio" name="q6" value="D">
+                            <span>很少用，偶尔看看</span>
+                        </label>
+                        <label class="survey-option">
+                            <input type="radio" name="q6" value="E">
+                            <span>从不使用</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="survey-question">
+                    <p class="survey-label">Q2. 在刚才判断照片真假的任务中，你对自己答案的自信程度是？</p>
+                    <div class="likert-row">
+                        <span class="likert-label">非常不自信</span>
+                        <div class="likert-options">
+                            <label><input type="radio" name="q9" value="1"><span>1</span></label>
+                            <label><input type="radio" name="q9" value="2"><span>2</span></label>
+                            <label><input type="radio" name="q9" value="3"><span>3</span></label>
+                            <label><input type="radio" name="q9" value="4"><span>4</span></label>
+                            <label><input type="radio" name="q9" value="5"><span>5</span></label>
+                        </div>
+                        <span class="likert-label">非常自信</span>
+                    </div>
+                </div>
+                <button id="btn-submit-all" class="btn-primary">提交问卷</button>
+            </div>
+        </section>
+
+        <!-- Step 11: Debrief -->
+        <section id="step-debrief" class="step hidden">
+            <div class="debrief-box">
+                <h2>感谢参与！</h2>
+                <p class="debrief-text">
+                    现在我们可以告诉你：你刚才浏览的所有用户主页以及部分照片<strong>实际上都是由AI算法自动生成的</strong>，包括头像、昵称、简介、照片和文字内容。
+                </p>
+                <p class="debrief-text">
+                    我们隐瞒了这一信息，是为了了解AI生成内容在自然环境下的真实感知效果。你在图片判别任务中的表现也将帮助我们评估AI图片的质量。
+                </p>
+                <p class="debrief-text">
+                    你的评价对我们的研究极其宝贵！
+                </p>
+                <div id="submit-status" class="submit-status"></div>
+                <button id="btn-download-csv" class="btn-secondary hidden">下载本地备份（CSV）</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

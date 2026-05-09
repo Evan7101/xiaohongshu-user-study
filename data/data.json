@@ -1,0 +1,597 @@
+{
+  "_comment": "请将占位图片URL替换为你的真实图片路径（相对路径如 ./images/xxx.jpg 或绝对URL）",
+  "sectionA_users": [
+    {
+      "id": "user_01",
+      "nickname": "甜甜圈日记",
+      "avatar": "https://placehold.co/200x200/ff6b9d/ffffff?text=Avatar1",
+      "profile": {
+        "age": 25,
+        "occupation": "平面设计师",
+        "location": "上海",
+        "bio": "喜欢探店、烘焙和猫咪，周末会开车去周边城市寻找美食。相信生活中最美好的时刻都藏在细节里。",
+        "interests": ["美食", "摄影", "烘焙", "探店", "猫咪"],
+        "personality": "活泼外向，喜欢分享生活小确幸，对新鲜事物充满好奇心"
+      },
+      "followers": 1248,
+      "following": 356,
+      "posts": [
+        {
+          "post_id": "u01_p01",
+          "images": [
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post1-Img1",
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post1-Img2"
+          ],
+          "text": "周末打卡了淮海路新开的贝果店🥯\n蓝莓奶酪口味绝了！店面不大但装修超温馨，老板是个很有礼貌的小哥。\n推荐给大家～\n\n#上海探店 #贝果 #周末去哪儿",
+          "likes": 128,
+          "comments": 23
+        },
+        {
+          "post_id": "u01_p02",
+          "images": [
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post2-Img1"
+          ],
+          "text": "第一次尝试做戚风蛋糕🍰\n虽然表面有点开裂，但口感意外的松软！\n下次要控制好烤箱温度\n\n#烘焙日记 #新手烘焙 #戚风蛋糕",
+          "likes": 245,
+          "comments": 41
+        },
+        {
+          "post_id": "u01_p03",
+          "images": [
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post3-Img1",
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post3-Img2"
+          ],
+          "text": "带我家主子去公园晒太阳🐱\n它好像更喜欢躲在猫包里观察世界\n\n#猫咪日常 #铲屎官 #公园遛猫",
+          "likes": 367,
+          "comments": 56
+        },
+        {
+          "post_id": "u01_p04",
+          "images": [
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post4-Img1"
+          ],
+          "text": "办公室的下午茶时光☕\n同事带的抹茶千层太治愈了\n\n#办公室日常 #下午茶 #抹茶控",
+          "likes": 89,
+          "comments": 12
+        },
+        {
+          "post_id": "u01_p05",
+          "images": [
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post5-Img1",
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post5-Img2"
+          ],
+          "text": "苏州一日游攻略来了！\n平江路真的太适合拍照了，每一个角落都是风景。\n吃了松鼠桂鱼和苏式汤面，满足！\n\n#苏州旅游 #平江路 #江南",
+          "likes": 512,
+          "comments": 78
+        },
+        {
+          "post_id": "u01_p06",
+          "images": [
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post6-Img1"
+          ],
+          "text": "新买的胶片机到了📷\n迫不及待去楼下试拍了几张\n色彩太有味道了\n\n#胶片摄影 #摄影日常 #胶片机",
+          "likes": 198,
+          "comments": 34
+        },
+        {
+          "post_id": "u01_p07",
+          "images": [
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post7-Img1",
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post7-Img2"
+          ],
+          "text": "朋友生日做了草莓奶油蛋糕🍓\n虽然裱花技术还有待提高，但心意满满！\n寿星说很好吃我就放心了\n\n#生日蛋糕 #手作 #草莓季",
+          "likes": 276,
+          "comments": 45
+        },
+        {
+          "post_id": "u01_p08",
+          "images": [
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post8-Img1"
+          ],
+          "text": "公司楼下的brunch新店\n班尼迪克蛋做得超正宗\n以后午餐有新去处了\n\n#上海美食 #brunch #工作日午餐",
+          "likes": 156,
+          "comments": 28
+        },
+        {
+          "post_id": "u01_p09",
+          "images": [
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post9-Img1",
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post9-Img2"
+          ],
+          "text": "主子今天两岁啦！\n给它准备了猫罐头蛋糕\n看它吃得多开心🎂\n\n#猫咪生日 #宠物日常 #两岁啦",
+          "likes": 423,
+          "comments": 67
+        },
+        {
+          "post_id": "u01_p10",
+          "images": [
+            "https://placehold.co/600x800/f0f0f0/333?text=User1-Post10-Img1"
+          ],
+          "text": "秋天的第一杯桂花拿铁🍂\n香味太治愈了\n\n#秋天 #桂花 #咖啡日常",
+          "likes": 312,
+          "comments": 49
+        }
+      ]
+    },
+    {
+      "id": "user_02",
+      "nickname": "山野徒步者",
+      "avatar": "https://placehold.co/200x200/4a90d9/ffffff?text=Avatar2",
+      "profile": {
+        "age": 28,
+        "occupation": "IT工程师",
+        "location": "杭州",
+        "bio": "工作日写代码，周末去山里。已经爬过20+座山峰，梦想是走一遍环浙步道。",
+        "interests": ["徒步", "登山", "露营", "摄影", "户外装备"],
+        "personality": "沉稳内敛，做事有条理，在大自然中最放松"
+      },
+      "followers": 3560,
+      "following": 210,
+      "posts": [
+        {
+          "post_id": "u02_p01",
+          "images": [
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post1-Img1",
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post1-Img2"
+          ],
+          "text": "武功山两天一夜徒步完成！\n云海日出太震撼了，虽然腿废了但值。\n\n#武功山 #徒步 #云海",
+          "likes": 892,
+          "comments": 134
+        },
+        {
+          "post_id": "u02_p02",
+          "images": [
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post2-Img1"
+          ],
+          "text": "新买的帐篷到了，先在小区草坪试搭一下⛺\n轻量化设计，不到2kg，下周带去天目山试试。\n\n#露营装备 #帐篷测评 #轻量化",
+          "likes": 445,
+          "comments": 67
+        },
+        {
+          "post_id": "u02_p03",
+          "images": [
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post3-Img1",
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post3-Img2"
+          ],
+          "text": "浙西天池的秋色\n水杉全红了，倒映在湖面上像画一样。\n\n#浙西天池 #秋天 #水杉",
+          "likes": 723,
+          "comments": 98
+        },
+        {
+          "post_id": "u02_p04",
+          "images": [
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post4-Img1"
+          ],
+          "text": "分享我的登山包整理思路\n分层收纳，常用物品放顶包\n\n#户外收纳 #登山包 #徒步技巧",
+          "likes": 567,
+          "comments": 89
+        },
+        {
+          "post_id": "u02_p05",
+          "images": [
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post5-Img1",
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post5-Img2"
+          ],
+          "text": "莫干山露营夜\n星空下煮泡面是最高级的享受\n\n#莫干山 #露营 #星空",
+          "likes": 634,
+          "comments": 76
+        },
+        {
+          "post_id": "u02_p06",
+          "images": [
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post6-Img1"
+          ],
+          "text": "公司团建居然组织了徒步\n同事们平时坐办公室，爬了半小时就开始喊累😂\n\n#团建 #公司日常 #户外",
+          "likes": 298,
+          "comments": 45
+        },
+        {
+          "post_id": "u02_p07",
+          "images": [
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post7-Img1",
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post7-Img2"
+          ],
+          "text": "四姑娘山大峰登顶成功！\n海拔5025米，零下10度，风大到站不稳。\n但看到日出的那一刻，一切都值了。\n\n#四姑娘山 #雪山 #登顶",
+          "likes": 1205,
+          "comments": 187
+        },
+        {
+          "post_id": "u02_p08",
+          "images": [
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post8-Img1"
+          ],
+          "text": "入手了新的头灯\n亮度够续航长，夜爬必备\n\n#户外装备 #头灯测评 #夜爬",
+          "likes": 378,
+          "comments": 52
+        },
+        {
+          "post_id": "u02_p09",
+          "images": [
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post9-Img1",
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post9-Img2"
+          ],
+          "text": "西湖群山一日线\n从龙井村到九溪烟树，秋天的杭州太美了。\n\n#西湖 #杭州徒步 #九溪烟树",
+          "likes": 845,
+          "comments": 112
+        },
+        {
+          "post_id": "u02_p10",
+          "images": [
+            "https://placehold.co/600x800/e8f4f8/333?text=User2-Post10-Img1"
+          ],
+          "text": "整理了一下今年的徒步路线\n居然走了15次，累计爬升12000米\n明年目标是完成环浙步道\n\n#年度总结 #徒步 #户外年度账单",
+          "likes": 678,
+          "comments": 95
+        }
+      ]
+    },
+    {
+      "id": "user_03",
+      "nickname": "考研小鲸鱼",
+      "avatar": "https://placehold.co/200x200/9b59b6/ffffff?text=Avatar3",
+      "profile": {
+        "age": 22,
+        "occupation": "大四学生",
+        "location": "南京",
+        "bio": "二战考研，目标某985新传专业。每天图书馆打卡，偶尔发学习日常和崩溃时刻。",
+        "interests": ["学习", "阅读", "手账", "咖啡", "猫咪"],
+        "personality": "敏感细腻，容易焦虑但也很努力，喜欢用文字记录情绪"
+      },
+      "followers": 890,
+      "following": 120,
+      "posts": [
+        {
+          "post_id": "u03_p01",
+          "images": [
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post1-Img1",
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post1-Img2"
+          ],
+          "text": "图书馆打卡第127天📚\n今天背完了传播学第8章\n虽然进度还是有点慢，但每天都在往前挪\n\n#考研打卡 #新传考研 #图书馆",
+          "likes": 234,
+          "comments": 56
+        },
+        {
+          "post_id": "u03_p02",
+          "images": [
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post2-Img1"
+          ],
+          "text": "又崩溃了\n背书背到第三遍还是记不住\n是不是我不适合考研\n\n#考研焦虑 #二战 #情绪树洞",
+          "likes": 567,
+          "comments": 234
+        },
+        {
+          "post_id": "u03_p03",
+          "images": [
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post3-Img1",
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post3-Img2"
+          ],
+          "text": "做了一套英语阅读，只错了1个！\n终于有点进步了，哭死\n\n#考研英语 #阅读 #进步",
+          "likes": 445,
+          "comments": 89
+        },
+        {
+          "post_id": "u03_p04",
+          "images": [
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post4-Img1"
+          ],
+          "text": "新买的手账本到了\n开始记录每日学习计划和复盘\n仪式感拉满\n\n#手账 #学习计划 #文具控",
+          "likes": 312,
+          "comments": 45
+        },
+        {
+          "post_id": "u03_p05",
+          "images": [
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post5-Img1",
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post5-Img2"
+          ],
+          "text": "室友都出去约会了\n一个人在宿舍写真题\n有点孤独但也有点充实\n\n#考研日常 #独处 #宿舍",
+          "likes": 678,
+          "comments": 156
+        },
+        {
+          "post_id": "u03_p06",
+          "images": [
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post6-Img1"
+          ],
+          "text": "今天政治选择题正确率78%\n肖1000刷到第二遍了\n感觉知识点慢慢连成网了\n\n#考研政治 #肖秀荣 #刷题",
+          "likes": 289,
+          "comments": 67
+        },
+        {
+          "post_id": "u03_p07",
+          "images": [
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post7-Img1",
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post7-Img2"
+          ],
+          "text": "下午在图书馆看到了超美的夕阳\n突然觉得自己还是挺幸运的\n至少有明确的目标在往前冲\n\n#夕阳 #图书馆 #治愈",
+          "likes": 523,
+          "comments": 98
+        },
+        {
+          "post_id": "u03_p08",
+          "images": [
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post8-Img1"
+          ],
+          "text": "专业课笔记整理完了\n满满三大本，都是心血\n\n#新传考研 #笔记整理 #专业课",
+          "likes": 401,
+          "comments": 73
+        },
+        {
+          "post_id": "u03_p09",
+          "images": [
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post9-Img1",
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post9-Img2"
+          ],
+          "text": "和研友去喝了杯咖啡\n聊了聊各自的进度\n发现大家都差不多焦虑\n瞬间就释然了\n\n#研友 #咖啡 #互相打气",
+          "likes": 356,
+          "comments": 82
+        },
+        {
+          "post_id": "u03_p10",
+          "images": [
+            "https://placehold.co/600x800/f5eef8/333?text=User3-Post10-Img1"
+          ],
+          "text": "倒计时30天\n不管结果怎样，至少我坚持到了最后\n加油\n\n#考研倒计时 #30天 #坚持",
+          "likes": 890,
+          "comments": 312
+        }
+      ]
+    },
+    {
+      "id": "user_04",
+      "nickname": "健身狂魔阿杰",
+      "avatar": "https://placehold.co/200x200/2ecc71/ffffff?text=Avatar4",
+      "profile": {
+        "age": 26,
+        "occupation": "健身教练",
+        "location": "深圳",
+        "bio": "国家一级健身指导员，从业4年。擅长增肌减脂，相信好身材是自律的副产品。",
+        "interests": ["健身", "力量训练", "健康饮食", "篮球", "户外跑"],
+        "personality": "阳光积极，说话直接，喜欢用数据说话"
+      },
+      "followers": 5200,
+      "following": 180,
+      "posts": [
+        {
+          "post_id": "u04_p01",
+          "images": [
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post1-Img1",
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post1-Img2"
+          ],
+          "text": "卧推突破100kg了！\n整整练了8个月，从60kg慢慢磨上来\n动作标准比重量重要，大家不要急\n\n#卧推 #增肌 #突破",
+          "likes": 1203,
+          "comments": 234
+        },
+        {
+          "post_id": "u04_p02",
+          "images": [
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post2-Img1"
+          ],
+          "text": "减脂期饮食分享\n蛋白质每公斤体重2g，碳水循环\n今天练腿日，碳水拉高到250g\n\n#减脂 #饮食 #健身餐",
+          "likes": 876,
+          "comments": 156
+        },
+        {
+          "post_id": "u04_p03",
+          "images": [
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post3-Img1",
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post3-Img2"
+          ],
+          "text": "带会员练背\n他的划船动作终于找到感觉了\n看到学员进步比自己练还有成就感\n\n#健身教练 #背部训练 #私教",
+          "likes": 654,
+          "comments": 98
+        },
+        {
+          "post_id": "u04_p04",
+          "images": [
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post4-Img1"
+          ],
+          "text": "深蹲教程来了\n注意膝盖不要内扣，核心收紧\n视频明天发\n\n#深蹲 #教程 #力量训练",
+          "likes": 923,
+          "comments": 187
+        },
+        {
+          "post_id": "u04_p05",
+          "images": [
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post5-Img1",
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post5-Img2"
+          ],
+          "text": "早起空腹有氧5公里\n深圳的早晨还是很舒服的\n\n#晨跑 #有氧 #空腹",
+          "likes": 445,
+          "comments": 67
+        },
+        {
+          "post_id": "u04_p06",
+          "images": [
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post6-Img1"
+          ],
+          "text": "今天体测数据\n体脂率从18%降到14%，肌肉量涨了1.5kg\n3个月的变化\n\n#体测 #数据 #变化",
+          "likes": 1102,
+          "comments": 213
+        },
+        {
+          "post_id": "u04_p07",
+          "images": [
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post7-Img1",
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post7-Img2"
+          ],
+          "text": "和兄弟打了一场篮球\n暴汗两小时，比练腿还累\n\n#篮球 #运动 #兄弟",
+          "likes": 378,
+          "comments": 56
+        },
+        {
+          "post_id": "u04_p08",
+          "images": [
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post8-Img1"
+          ],
+          "text": "蛋白粉测评\n市面上主流品牌对比\n口味、溶解度、性价比\n\n#蛋白粉 #补剂 #测评",
+          "likes": 789,
+          "comments": 134
+        },
+        {
+          "post_id": "u04_p09",
+          "images": [
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post9-Img1",
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post9-Img2"
+          ],
+          "text": "健身4年对比照\n左边是刚入坑的时候，右边是现在\n变化很大，但路还很长\n\n#健身前后对比 #蜕变 #坚持",
+          "likes": 2345,
+          "comments": 456
+        },
+        {
+          "post_id": "u04_p10",
+          "images": [
+            "https://placehold.co/600x800/e8f8f0/333?text=User4-Post10-Img1"
+          ],
+          "text": "健身房新来的器械\n固定器械练胸，轨迹很丝滑\n推荐给大家\n\n#健身房 #器械 #练胸",
+          "likes": 567,
+          "comments": 89
+        }
+      ]
+    },
+    {
+      "id": "user_05",
+      "nickname": "韩系穿搭欧尼",
+      "avatar": "https://placehold.co/200x200/ff9f43/ffffff?text=Avatar5",
+      "profile": {
+        "age": 24,
+        "occupation": "服装买手",
+        "location": "广州",
+        "bio": "在韩国留学两年，回国做买手。喜欢简约温柔的韩系穿搭，分享日常OOTD和平价好物。",
+        "interests": ["穿搭", "美妆", "探店", "摄影", "旅行"],
+        "personality": "温柔亲和，审美在线，说话轻声细语"
+      },
+      "followers": 8900,
+      "following": 320,
+      "posts": [
+        {
+          "post_id": "u05_p01",
+          "images": [
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post1-Img1",
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post1-Img2"
+          ],
+          "text": " today's OOTD🍂\n燕麦色大衣+米色针织裙\n温柔又保暖\n\n#韩系穿搭 #OOTD #秋冬穿搭",
+          "likes": 1567,
+          "comments": 234
+        },
+        {
+          "post_id": "u05_p02",
+          "images": [
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post2-Img1"
+          ],
+          "text": "韩国带回的面膜测评\n用了两周，补水效果确实不错\n价格也不贵\n\n#面膜测评 #韩系护肤 #好物分享",
+          "likes": 923,
+          "comments": 156
+        },
+        {
+          "post_id": "u05_p03",
+          "images": [
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post3-Img1",
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post3-Img2"
+          ],
+          "text": "广州新店探店\n韩风咖啡厅，拍照超出片\n蛋糕也好吃\n\n#广州探店 #咖啡厅 #韩系",
+          "likes": 1234,
+          "comments": 198
+        },
+        {
+          "post_id": "u05_p04",
+          "images": [
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post4-Img1"
+          ],
+          "text": "通勤穿搭\n简单的白衬衫+西装裤\n加个丝巾点缀就很有味道\n\n#通勤穿搭 #简约 #职场",
+          "likes": 845,
+          "comments": 123
+        },
+        {
+          "post_id": "u05_p05",
+          "images": [
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post5-Img1",
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post5-Img2"
+          ],
+          "text": "去韩国出差一周\n见了很多供应商，也买了不少新款\n期待上架\n\n#买手日常 #韩国 #出差",
+          "likes": 678,
+          "comments": 89
+        },
+        {
+          "post_id": "u05_p06",
+          "images": [
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post6-Img1"
+          ],
+          "text": "平价好物分享\n这件优衣库针织衫才99块\n质感绝了\n\n#平价好物 #优衣库 #针织衫",
+          "likes": 2134,
+          "comments": 456
+        },
+        {
+          "post_id": "u05_p07",
+          "images": [
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post7-Img1",
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post7-Img2"
+          ],
+          "text": "周末约会穿搭\n粉色毛衣+白色半裙\n甜甜的一天\n\n#约会穿搭 #粉色系 #甜美",
+          "likes": 1567,
+          "comments": 234
+        },
+        {
+          "post_id": "u05_p08",
+          "images": [
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post8-Img1"
+          ],
+          "text": "秋冬口红推荐\n这几只都很显白\n黄皮友好\n\n#口红推荐 #秋冬 #显白",
+          "likes": 1123,
+          "comments": 178
+        },
+        {
+          "post_id": "u05_p09",
+          "images": [
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post9-Img1",
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post9-Img2"
+          ],
+          "text": "家里的穿搭角落\n终于整理好了\n每天在这里选衣服心情都很好\n\n#衣帽间 #整理 #生活",
+          "likes": 2345,
+          "comments": 345
+        },
+        {
+          "post_id": "u05_p10",
+          "images": [
+            "https://placehold.co/600x800/fff5e6/333?text=User5-Post10-Img1"
+          ],
+          "text": "新年穿搭预告\n红色系单品已经准备好了\n过年就要红红火火\n\n#新年穿搭 #红色系 #过年",
+          "likes": 1890,
+          "comments": 267
+        }
+      ]
+    }
+  ],
+  "sectionB_images": [
+    { "id": "b01", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img01", "type": "ai", "source_user": "user_01" },
+    { "id": "b16", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img01", "type": "real", "source_user": null },
+    { "id": "b02", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img02", "type": "ai", "source_user": "user_01" },
+    { "id": "b17", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img02", "type": "real", "source_user": null },
+    { "id": "b03", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img03", "type": "ai", "source_user": "user_02" },
+    { "id": "b18", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img03", "type": "real", "source_user": null },
+    { "id": "b04", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img04", "type": "ai", "source_user": "user_02" },
+    { "id": "b19", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img04", "type": "real", "source_user": null },
+    { "id": "b05", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img05", "type": "ai", "source_user": "user_03" },
+    { "id": "b20", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img05", "type": "real", "source_user": null },
+    { "id": "b06", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img06", "type": "ai", "source_user": "user_03" },
+    { "id": "b21", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img06", "type": "real", "source_user": null },
+    { "id": "b07", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img07", "type": "ai", "source_user": "user_04" },
+    { "id": "b22", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img07", "type": "real", "source_user": null },
+    { "id": "b08", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img08", "type": "ai", "source_user": "user_04" },
+    { "id": "b23", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img08", "type": "real", "source_user": null },
+    { "id": "b09", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img09", "type": "ai", "source_user": "user_05" },
+    { "id": "b24", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img09", "type": "real", "source_user": null },
+    { "id": "b10", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img10", "type": "ai", "source_user": "user_05" },
+    { "id": "b25", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img10", "type": "real", "source_user": null },
+    { "id": "b11", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img11", "type": "ai", "source_user": "user_01" },
+    { "id": "b26", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img11", "type": "real", "source_user": null },
+    { "id": "b12", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img12", "type": "ai", "source_user": "user_02" },
+    { "id": "b27", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img12", "type": "real", "source_user": null },
+    { "id": "b13", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img13", "type": "ai", "source_user": "user_03" },
+    { "id": "b28", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img13", "type": "real", "source_user": null },
+    { "id": "b14", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img14", "type": "ai", "source_user": "user_04" },
+    { "id": "b29", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img14", "type": "real", "source_user": null },
+    { "id": "b15", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img15", "type": "ai", "source_user": "user_05" },
+    { "id": "b30", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img15", "type": "real", "source_user": null }
+  ]
+}
