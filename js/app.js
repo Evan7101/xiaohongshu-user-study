@@ -429,9 +429,6 @@ function initPostsurvey() {
     r.addEventListener('change', () => {
       ratings.postsurvey.q9 = r.value;
       saveState();
-      $$('input[name="q9"]').forEach(rb => {
-        rb.closest('.survey-option').classList.toggle('selected', rb.checked);
-      });
     });
   });
 
