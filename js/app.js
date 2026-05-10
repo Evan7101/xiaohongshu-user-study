@@ -5,6 +5,8 @@
 // ==================== 配置 ====================
 const CONFIG = {
   dataUrl: 'data/data.json',
+  // 本地/Vercel部署用 '/api/submit'
+  // 腾讯云SCF部署用 'https://service-xxx.gz.apigw.tencentcs.com/release/xiaohongshu-submit'
   submitUrl: '/api/submit',
   storageKey: 'xhsc_userstudy_state',
 };
