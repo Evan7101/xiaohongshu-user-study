@@ -5,8 +5,7 @@
 // ==================== 配置 ====================
 const CONFIG = {
   dataUrl: 'data/data.json',
-  // 腾讯云 SCF 函数 URL
-  submitUrl: 'https://1420292445-7repw7vuwr.ap-guangzhou.tencentscf.com',
+  submitUrl: '/api/submit',
   storageKey: 'xhsc_userstudy_state',
 };
 
