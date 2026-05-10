@@ -1,0 +1,146 @@
+============================================================
+  小红书风格 User Study 问卷 - 本地运行指南
+============================================================
+
+一、环境准备
+------------
+1. Python 3.x（Windows 通常已自带，或在 Microsoft Store 安装）
+2. ngrok（用于把本地服务暴露到公网，让手机访问）
+   - 下载：https://ngrok.com
+   - 注册免费账号，获取 authtoken
+   - 首次运行：ngrok config add-authtoken 你的Token
+
+
+二、数据准备（关键！）
+----------------------
+所有数据都在 data/data.json 这一个文件里。
+
+【目录结构建议】
+
+xiaohongshu-user-study/
+├── index.html          (前端页面，不要改)
+├── js/app.js           (前端逻辑，不要改)
+├── css/style.css       (样式，不要改)
+├── server.py           (本地服务器，不要改)
+├── data/
+│   ├── data.json       ← 你唯一需要编辑的文件
+│   └── images/         ← 放图片的文件夹（可选）
+│       ├── user_01/
+│       │   ├── avatar.jpg
+│       │   ├── post1_img1.jpg
+│       │   └── post1_img2.jpg
+│       └── sectionB/
+│           ├── ai_01.jpg
+│           └── real_01.jpg
+│
+└── responses.csv       ← 自动生成的数据文件（填完问卷后生成）
+
+【data.json 格式说明】
+
+文件包含两部分：
+
+1. sectionA_users: 5个用户，每个用户包含：
+   - id: 用户唯一标识
+   - nickname: 昵称
+   - avatar: 头像路径（可以是相对路径如 "./images/user_01/avatar.jpg"，或图床URL）
+   - profile: { age, occupation, location, bio, interests[], personality }
+   - followers/following: 粉丝/关注数
+   - posts: 10条帖子，每条包含：
+     - images: 图片路径数组（1-多张）
+     - text: 文案
+     - likes/comments: 互动数
+
+2. sectionB_images: 30张图片，用于真假判别任务：
+   - id: 唯一标识
+   - url: 图片路径
+   - type: "ai" 或 "real"（仅后台统计用，受访者看不到）
+
+【图片路径写法】
+
+方式A - 本地图片（推荐，加载快）：
+  1. 在 data/ 下建 images 文件夹
+  2. 把图片放进去
+  3. data.json 里写相对路径："./data/images/user_01/avatar.jpg"
+
+方式B - 图床URL：
+  直接把图片上传到图床（如腾讯云COS、阿里云OSS、GitHub raw等）
+  data.json 里写完整URL："https://your-cdn.com/image.jpg"
+
+【重要提示】
+- 图片建议压缩到单张 < 500KB，否则手机加载慢
+- Section B 的30张图片，建议 AI 和真实图片混合排列（不要前15张全是AI）
+- 所有用户的帖子图片总数 + Section B 的30张 = 约130张图
+
+
+三、启动问卷
+------------
+1. 打开 PowerShell，进入项目文件夹：
+
+   cd C:\code_project\xiaohongshu-user-study
+
+2. 启动本地服务器：
+
+   python server.py
+
+   看到以下输出说明成功：
+   --------------------------------------------------
+   问卷服务器已启动
+   本地访问: http://localhost:8080
+   数据保存: C:\code_project\xiaohongshu-user-study\responses.csv
+   --------------------------------------------------
+
+3. 打开另一个 PowerShell 窗口，启动 ngrok：
+
+   ngrok http 8080
+
+   看到类似输出：
+   Forwarding  https://abcd-1234.ngrok-free.app -> http://localhost:8080
+
+4. 把 https://abcd-1234.ngrok-free.app 发给受访者
+
+5. 受访者用手机浏览器打开，填写问卷
+
+6. 数据实时保存在 responses.csv，用 Excel 直接打开分析
+
+
+四、常见问题
+------------
+Q: 电脑关机后别人还能填吗？
+A: 不能。server.py 和 ngrok 都需要电脑保持开机。
+
+Q: ngrok 的网址会变吗？
+A: 免费版每次重启 ngrok 都会变。记得发问卷前复制最新地址。
+
+Q: 能同时几个人填？
+A: 免费版 ngrok 支持少量并发，30-50人完全够用。
+
+Q: 怎么换自己的数据？
+A: 编辑 data/data.json，替换文字和图片路径，保存后刷新网页即可（不用重启服务器）。
+
+Q: 怎么停止服务？
+A: 在 PowerShell 里按 Ctrl+C。
+
+
+五、数据文件说明
+----------------
+- data/data.json    : 你准备的问卷内容（用户资料+帖子+图片）
+- responses.csv     : 自动生成的答卷数据（填完问卷后生成/追加）
+
+responses.csv 包含以下列：
+  提交时间, 受访者ID, 板块, 用户序号, 用户ID,
+  A1_整体自然度, A2_人设匹配, A3_生活逻辑, A4_图文匹配, A5_帖子连贯,
+  开放题, 图片序号, 图片ID, 判别结果, Q6_小红书使用频率, Q9_判别自信度
+
+
+============================================================
+  快速检查清单
+============================================================
+□ 安装了 Python
+□ 安装了 ngrok 并配置了 authtoken
+□ 编辑了 data/data.json 放入自己的数据
+□ 图片放在正确的路径/图床上
+□ 运行 python server.py（显示"问卷服务器已启动"）
+□ 运行 ngrok http 8080（拿到公网地址）
+□ 把 ngrok 地址发给受访者
+□ 回收结束后查看 responses.csv
+============================================================
