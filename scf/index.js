@@ -1,5 +1,6 @@
 /**
  * 腾讯云云函数 SCF - 接收问卷数据并写入飞书多维表格
+ * 使用 Node.js https 模块（兼容 SCF 运行时）
  *
  * 环境变量（需在腾讯云 SCF 控制台配置）：
  * - FEISHU_APP_ID
@@ -8,38 +9,60 @@
  * - FEISHU_TABLE_ID
  */
 
-const FEISHU_BASE = 'https://open.feishu.cn/open-apis';
+const https = require('https');
+
+const FEISHU_BASE = 'open.feishu.cn';
+
+function httpsRequest(options, postData) {
+  return new Promise((resolve, reject) => {
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', (chunk) => { data += chunk; });
+      res.on('end', () => {
+        try {
+          resolve({ statusCode: res.statusCode, headers: res.headers, body: JSON.parse(data) });
+        } catch (e) {
+          resolve({ statusCode: res.statusCode, headers: res.headers, body: data });
+        }
+      });
+    });
+    req.on('error', reject);
+    if (postData) req.write(postData);
+    req.end();
+  });
+}
 
 async function getTenantAccessToken(appId, appSecret) {
-  const res = await fetch(`${FEISHU_BASE}/auth/v3/tenant_access_token/internal`, {
+  const result = await httpsRequest({
+    hostname: FEISHU_BASE,
+    path: '/open-apis/auth/v3/tenant_access_token/internal',
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ app_id: appId, app_secret: appSecret }),
-  });
-  const data = await res.json();
-  if (data.code !== 0) {
-    throw new Error(`Feishu auth error: ${data.msg || JSON.stringify(data)}`);
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }, JSON.stringify({ app_id: appId, app_secret: appSecret }));
+
+  if (result.body.code !== 0) {
+    throw new Error(`Feishu auth error: ${result.body.msg || JSON.stringify(result.body)}`);
   }
-  return data.tenant_access_token;
+  return result.body.tenant_access_token;
 }
 
 async function createRecord(token, appToken, tableId, fields) {
-  const res = await fetch(
-    `${FEISHU_BASE}/base/v1/apps/${appToken}/tables/${tableId}/records`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-      body: JSON.stringify({ fields }),
-    }
-  );
-  const data = await res.json();
-  if (data.code !== 0) {
-    throw new Error(`Feishu create record error: ${data.msg || JSON.stringify(data)}`);
+  const result = await httpsRequest({
+    hostname: FEISHU_BASE,
+    path: `/open-apis/base/v1/apps/${appToken}/tables/${tableId}/records`,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    },
+  }, JSON.stringify({ fields }));
+
+  if (result.body.code !== 0) {
+    throw new Error(`Feishu create record error: ${result.body.msg || JSON.stringify(result.body)}`);
   }
-  return data.data;
+  return result.body.data;
 }
 
 exports.main_handler = async (event, context) => {
