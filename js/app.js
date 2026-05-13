@@ -115,13 +115,57 @@ function clearState() {
 
 // ==================== 数据加载：调用 /api/assign ====================
 async function assignQuestionnaire() {
+  // 先尝试后端分配
   try {
     const res = await fetch(CONFIG.assignUrl, { method: 'POST' });
-    questionnaire = await res.json();
-    console.log('问卷分配:', questionnaire);
+    if (res.ok) {
+      questionnaire = await res.json();
+      console.log('后端分配问卷:', questionnaire);
+      if (questionnaire && questionnaire.user && questionnaire.images) {
+        return true;
+      }
+    }
+  } catch (err) {
+    console.warn('后端分配失败，尝试本地fallback:', err);
+  }
+
+  // Fallback: 从本地 data.json 加载第一份问卷
+  try {
+    const res = await fetch('data/data.json');
+    const data = await res.json();
+    const users = data.sectionA_users || [];
+    const allImages = data.sectionB_images || [];
+    const qMap = data.questionnaire_map || {};
+
+    if (users.length === 0) {
+      alert('数据加载失败：没有用户数据');
+      return false;
+    }
+
+    // 取第一个user
+    const user = users[0];
+    const imageIds = qMap[user.id] || [];
+    const imgMap = Object.fromEntries(allImages.map(img => [img.id, img]));
+    const images = imageIds.map(id => imgMap[id]).filter(Boolean);
+
+    // 兜底：如果没凑够10张，补充其他图
+    if (images.length < 10) {
+      for (const img of allImages) {
+        if (!images.includes(img) && images.length < 10) {
+          images.push(img);
+        }
+      }
+    }
+
+    questionnaire = {
+      questionnaireId: user.id,
+      user: user,
+      images: images.slice(0, 10),
+    };
+    console.log('本地fallback问卷:', questionnaire);
     return true;
   } catch (err) {
-    alert('问卷分配失败，请刷新页面重试。');
+    alert('问卷加载失败，请检查网络后刷新页面重试。\n错误: ' + err.message);
     console.error(err);
     return false;
   }
@@ -545,6 +589,19 @@ function downloadCSV(payload) {
 
 // ==================== 初始化 ====================
 async function init() {
+  // 清理旧版本可能残留的 localStorage 状态（旧版数据结构不兼容）
+  try {
+    const raw = localStorage.getItem(CONFIG.storageKey);
+    if (raw) {
+      const oldState = JSON.parse(raw);
+      // 如果旧状态中的 sectionA 是数组（旧版结构），清除它
+      if (oldState.ratings && Array.isArray(oldState.ratings.sectionA)) {
+        console.log('检测到旧版 localStorage 状态，已清除');
+        localStorage.removeItem(CONFIG.storageKey);
+      }
+    }
+  } catch (e) { /* ignore */ }
+
   // 第一步：分配问卷
   const assigned = await assignQuestionnaire();
   if (!assigned) return;

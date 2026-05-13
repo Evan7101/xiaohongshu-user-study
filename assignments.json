@@ -1,0 +1,22 @@
+{
+  "user_01": {
+    "assigned": 3,
+    "submitted": 3
+  },
+  "user_02": {
+    "assigned": 3,
+    "submitted": 1
+  },
+  "user_03": {
+    "assigned": 2,
+    "submitted": 0
+  },
+  "user_04": {
+    "assigned": 0,
+    "submitted": 0
+  },
+  "user_05": {
+    "assigned": 0,
+    "submitted": 0
+  }
+}
