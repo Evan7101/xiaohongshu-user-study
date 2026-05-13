@@ -63,11 +63,17 @@ def assign_questionnaire():
         if uid not in assignments:
             assignments[uid] = {'assigned': 0, 'submitted': 0}
 
-    # === 分配算法 ===
-    # 无上限：按 assigned 计数最少优先分配，实现均匀轮询
-    min_assigned = min(assignments[uid]['assigned'] for uid in user_ids)
-    candidates = [uid for uid in user_ids if assignments[uid]['assigned'] == min_assigned]
-    assigned_id = candidates[0]
+    # === 分配算法（无硬性上限，智能补足）===
+    # 阶段1: 先确保每套问卷都被分配到至少3次（按user顺序）
+    candidates = [uid for uid in user_ids if assignments[uid]['assigned'] < 3]
+
+    if candidates:
+        assigned_id = candidates[0]
+    else:
+        # 阶段2: 全部已分配过3次后，按 submitted 最少优先（补足提交缺口）
+        min_submitted = min(assignments[uid]['submitted'] for uid in user_ids)
+        candidates = [uid for uid in user_ids if assignments[uid]['submitted'] == min_submitted]
+        assigned_id = candidates[0]
 
     # 记录分配
     assignments[assigned_id]['assigned'] += 1
