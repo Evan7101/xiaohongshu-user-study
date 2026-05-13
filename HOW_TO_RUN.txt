@@ -1,146 +1,136 @@
+小红书用户研究问卷 - 本地部署运行指南
 ============================================================
-  小红书风格 User Study 问卷 - 本地运行指南
-============================================================
 
-一、环境准备
+一、问卷结构（更新后）
+-----------------------
+每份问卷 = 1个小红书用户主页评价 + 10张图片真假判断 + 个人信息
+
+- 5套问卷，每套对应1个AI生成用户 + 10张专属图片
+- 每套问卷目标收集3份有效答卷（共15人）
+- 后端智能分配：第一个打开链接的人→问卷1，第四个→问卷2...
+- 如果有人点击了但未提交，系统会自动将后续访问者分配给缺额的问卷
+
+二、前置准备
 ------------
-1. Python 3.x（Windows 通常已自带，或在 Microsoft Store 安装）
-2. ngrok（用于把本地服务暴露到公网，让手机访问）
-   - 下载：https://ngrok.com
-   - 注册免费账号，获取 authtoken
-   - 首次运行：ngrok config add-authtoken 你的Token
+1. 确保已安装 Python 3.x（无需任何第三方库）
+2. 确保已安装 ngrok（用于公网访问）
+   下载地址：https://ngrok.com/download
+   注册账号后获取 authtoken：ngrok config add-authtoken <your_token>
 
-
-二、数据准备（关键！）
-----------------------
-所有数据都在 data/data.json 这一个文件里。
-
-【目录结构建议】
-
-xiaohongshu-user-study/
-├── index.html          (前端页面，不要改)
-├── js/app.js           (前端逻辑，不要改)
-├── css/style.css       (样式，不要改)
-├── server.py           (本地服务器，不要改)
-├── data/
-│   ├── data.json       ← 你唯一需要编辑的文件
-│   └── images/         ← 放图片的文件夹（可选）
-│       ├── user_01/
-│       │   ├── avatar.jpg
-│       │   ├── post1_img1.jpg
-│       │   └── post1_img2.jpg
-│       └── sectionB/
-│           ├── ai_01.jpg
-│           └── real_01.jpg
-│
-└── responses.csv       ← 自动生成的数据文件（填完问卷后生成）
-
-【data.json 格式说明】
-
-文件包含两部分：
-
-1. sectionA_users: 5个用户，每个用户包含：
-   - id: 用户唯一标识
-   - nickname: 昵称
-   - avatar: 头像路径（可以是相对路径如 "./images/user_01/avatar.jpg"，或图床URL）
-   - profile: { age, occupation, location, bio, interests[], personality }
-   - followers/following: 粉丝/关注数
-   - posts: 10条帖子，每条包含：
-     - images: 图片路径数组（1-多张）
-     - text: 文案
-     - likes/comments: 互动数
-
-2. sectionB_images: 30张图片，用于真假判别任务：
-   - id: 唯一标识
-   - url: 图片路径
-   - type: "ai" 或 "real"（仅后台统计用，受访者看不到）
-
-【图片路径写法】
-
-方式A - 本地图片（推荐，加载快）：
-  1. 在 data/ 下建 images 文件夹
-  2. 把图片放进去
-  3. data.json 里写相对路径："./data/images/user_01/avatar.jpg"
-
-方式B - 图床URL：
-  直接把图片上传到图床（如腾讯云COS、阿里云OSS、GitHub raw等）
-  data.json 里写完整URL："https://your-cdn.com/image.jpg"
-
-【重要提示】
-- 图片建议压缩到单张 < 500KB，否则手机加载慢
-- Section B 的30张图片，建议 AI 和真实图片混合排列（不要前15张全是AI）
-- 所有用户的帖子图片总数 + Section B 的30张 = 约130张图
-
-
-三、启动问卷
-------------
-1. 打开 PowerShell，进入项目文件夹：
-
-   cd C:\code_project\xiaohongshu-user-study
-
-2. 启动本地服务器：
-
-   python server.py
-
-   看到以下输出说明成功：
-   --------------------------------------------------
-   问卷服务器已启动
-   本地访问: http://localhost:8080
-   数据保存: C:\code_project\xiaohongshu-user-study\responses.csv
-   --------------------------------------------------
-
-3. 打开另一个 PowerShell 窗口，启动 ngrok：
-
-   ngrok http 8080
-
-   看到类似输出：
-   Forwarding  https://abcd-1234.ngrok-free.app -> http://localhost:8080
-
-4. 把 https://abcd-1234.ngrok-free.app 发给受访者
-
-5. 受访者用手机浏览器打开，填写问卷
-
-6. 数据实时保存在 responses.csv，用 Excel 直接打开分析
-
-
-四、常见问题
-------------
-Q: 电脑关机后别人还能填吗？
-A: 不能。server.py 和 ngrok 都需要电脑保持开机。
-
-Q: ngrok 的网址会变吗？
-A: 免费版每次重启 ngrok 都会变。记得发问卷前复制最新地址。
-
-Q: 能同时几个人填？
-A: 免费版 ngrok 支持少量并发，30-50人完全够用。
-
-Q: 怎么换自己的数据？
-A: 编辑 data/data.json，替换文字和图片路径，保存后刷新网页即可（不用重启服务器）。
-
-Q: 怎么停止服务？
-A: 在 PowerShell 里按 Ctrl+C。
-
-
-五、数据文件说明
+三、填写真实数据
 ----------------
-- data/data.json    : 你准备的问卷内容（用户资料+帖子+图片）
-- responses.csv     : 自动生成的答卷数据（填完问卷后生成/追加）
+唯一需要编辑的文件：data/data.json
 
-responses.csv 包含以下列：
-  提交时间, 受访者ID, 板块, 用户序号, 用户ID,
-  A1_整体自然度, A2_人设匹配, A3_生活逻辑, A4_图文匹配, A5_帖子连贯,
-  开放题, 图片序号, 图片ID, 判别结果, Q6_小红书使用频率, Q9_判别自信度
+结构说明：
+{
+  "sectionA_users": [     // 5个用户，每个包含资料+10条帖子
+    {
+      "id": "user_01",
+      "nickname": "...",
+      "avatar": "./images/avatar1.jpg",   // 相对路径或URL
+      "profile": { "age": 25, "occupation": "...", ... },
+      "followers": 1248,
+      "following": 356,
+      "posts": [            // 10条帖子
+        {
+          "post_id": "u01_p01",
+          "images": ["./images/u01_p01.jpg"],
+          "text": "帖子文案...",
+          "likes": 128,
+          "comments": 23
+        }
+      ]
+    }
+  ],
+  "sectionB_images": [     // 所有图片库（至少50张，5套×10张）
+    { "id": "b01", "url": "...", "type": "ai" },
+    { "id": "b16", "url": "...", "type": "real" }
+  ],
+  "questionnaire_map": {   // 关键！定义每套问卷用哪10张图
+    "user_01": ["b01", "b16", "b02", "b17", "b11", "b26", "b03", "b18", "b04", "b19"],
+    "user_02": ["b03", "b18", "b04", "b19", "b12", "b27", "b05", "b20", "b06", "b21"],
+    "user_03": ["b05", "b20", "b06", "b21", "b13", "b28", "b07", "b22", "b08", "b23"],
+    "user_04": ["b07", "b22", "b08", "b23", "b14", "b29", "b09", "b24", "b10", "b25"],
+    "user_05": ["b09", "b24", "b10", "b25", "b15", "b30", "b01", "b26", "b02", "b27"]
+  }
+}
 
+图片路径建议：
+- 本地图片：放在 images/ 文件夹，路径写 "./images/xxx.jpg"
+- 在线图片：直接写完整URL
+- 建议每张图宽度1080px，压缩到500KB以内
 
-============================================================
-  快速检查清单
-============================================================
-□ 安装了 Python
-□ 安装了 ngrok 并配置了 authtoken
-□ 编辑了 data/data.json 放入自己的数据
-□ 图片放在正确的路径/图床上
-□ 运行 python server.py（显示"问卷服务器已启动"）
-□ 运行 ngrok http 8080（拿到公网地址）
-□ 把 ngrok 地址发给受访者
-□ 回收结束后查看 responses.csv
-============================================================
+四、启动服务器
+--------------
+打开终端，执行：
+
+    cd C:\code_project\xiaohongshu-user-study
+    python server.py
+
+你会看到：
+    问卷服务器已启动
+    本地访问: http://localhost:8080
+    数据保存: responses.csv
+    分配记录: assignments.json
+
+五、暴露到公网（ngrok）
+-----------------------
+打开另一个终端，执行：
+
+    ngrok http 8080
+
+复制 https://xxx.ngrok-free.app 这个链接发给受访者。
+所有人打开的都是同一个链接，后端会自动分配不同的问卷。
+
+六、监控数据收集
+----------------
+1. 查看已分配的问卷情况（实时）：
+   直接打开 assignments.json 文件，里面记录了每个问卷的分配次数和成功提交次数：
+   {
+     "user_01": { "assigned": 3, "submitted": 2 },  // 分配了3人，2人已完成
+     "user_02": { "assigned": 3, "submitted": 3 },  // 已满
+     ...
+   }
+
+2. 查看答卷数据：
+   打开 responses.csv（Excel 直接打开即可，UTF-8编码带BOM）
+
+   CSV 长格式说明：
+   - 每个受访者产生 12 行数据：
+     * 1行 SectionA（该用户的4个维度评分+开放题）
+     * 10行 SectionB（10张图片的真假判断）
+     * 1行 Postsurvey（Q6使用频率 + Q9自信度）
+   - 每行都有 "受访者ID" 和 "分配问卷" 字段，可用于关联同一人的所有回答
+
+3. 要结束收集、停止服务器：
+   在运行 server.py 的终端按 Ctrl+C
+
+七、如果需要重启服务器
+-----------------------
+可以安全地停止再启动，assignments.json 和 responses.csv 会被保留并继续追加。
+
+但如果想清空重新开始：
+    del responses.csv
+    del assignments.json
+    python server.py
+
+八、配额已满后的行为
+--------------------
+当5套问卷每套都分配过3次后（共15次访问）：
+- 如果某些问卷的实际提交数不足3，后续访问者会优先分配给提交数少的问卷
+- 如果所有问卷都已满3个提交，系统会继续分配（超额收集）
+- 如果你只想收集恰好15份，在 assignments.json 中看到所有 submitted=3 时即可停止分享链接
+
+九、注意事项
+------------
+1. 服务器必须保持运行，否则新访问者无法分配问卷、无法提交数据
+2. ngrok 免费版每次启动URL会变，如果要长期运行建议用 paid plan 或固定域名的方案
+3. 不要在 debrief 页面之前告诉受访者内容是AI生成的（这是盲测设计）
+4. 所有图片建议开启 lazy loading（已内置），减少移动端流量消耗
+
+十、故障排查
+------------
+- 页面空白/加载失败：检查 data.json 格式是否正确（JSON语法）
+- 图片不显示：检查图片路径/URL是否可访问
+- 提交失败：检查 server.py 是否在运行，终端有无报错
+- assignments.json 损坏：删除它重启服务器，系统会自动重建

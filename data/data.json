@@ -10,7 +10,13 @@
         "occupation": "平面设计师",
         "location": "上海",
         "bio": "喜欢探店、烘焙和猫咪，周末会开车去周边城市寻找美食。相信生活中最美好的时刻都藏在细节里。",
-        "interests": ["美食", "摄影", "烘焙", "探店", "猫咪"],
+        "interests": [
+          "美食",
+          "摄影",
+          "烘焙",
+          "探店",
+          "猫咪"
+        ],
         "personality": "活泼外向，喜欢分享生活小确幸，对新鲜事物充满好奇心"
       },
       "followers": 1248,
@@ -122,7 +128,13 @@
         "occupation": "IT工程师",
         "location": "杭州",
         "bio": "工作日写代码，周末去山里。已经爬过20+座山峰，梦想是走一遍环浙步道。",
-        "interests": ["徒步", "登山", "露营", "摄影", "户外装备"],
+        "interests": [
+          "徒步",
+          "登山",
+          "露营",
+          "摄影",
+          "户外装备"
+        ],
         "personality": "沉稳内敛，做事有条理，在大自然中最放松"
       },
       "followers": 3560,
@@ -234,7 +246,13 @@
         "occupation": "大四学生",
         "location": "南京",
         "bio": "二战考研，目标某985新传专业。每天图书馆打卡，偶尔发学习日常和崩溃时刻。",
-        "interests": ["学习", "阅读", "手账", "咖啡", "猫咪"],
+        "interests": [
+          "学习",
+          "阅读",
+          "手账",
+          "咖啡",
+          "猫咪"
+        ],
         "personality": "敏感细腻，容易焦虑但也很努力，喜欢用文字记录情绪"
       },
       "followers": 890,
@@ -346,7 +364,13 @@
         "occupation": "健身教练",
         "location": "深圳",
         "bio": "国家一级健身指导员，从业4年。擅长增肌减脂，相信好身材是自律的副产品。",
-        "interests": ["健身", "力量训练", "健康饮食", "篮球", "户外跑"],
+        "interests": [
+          "健身",
+          "力量训练",
+          "健康饮食",
+          "篮球",
+          "户外跑"
+        ],
         "personality": "阳光积极，说话直接，喜欢用数据说话"
       },
       "followers": 5200,
@@ -458,7 +482,13 @@
         "occupation": "服装买手",
         "location": "广州",
         "bio": "在韩国留学两年，回国做买手。喜欢简约温柔的韩系穿搭，分享日常OOTD和平价好物。",
-        "interests": ["穿搭", "美妆", "探店", "摄影", "旅行"],
+        "interests": [
+          "穿搭",
+          "美妆",
+          "探店",
+          "摄影",
+          "旅行"
+        ],
         "personality": "温柔亲和，审美在线，说话轻声细语"
       },
       "followers": 8900,
@@ -563,35 +593,247 @@
     }
   ],
   "sectionB_images": [
-    { "id": "b01", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img01", "type": "ai", "source_user": "user_01" },
-    { "id": "b16", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img01", "type": "real", "source_user": null },
-    { "id": "b02", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img02", "type": "ai", "source_user": "user_01" },
-    { "id": "b17", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img02", "type": "real", "source_user": null },
-    { "id": "b03", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img03", "type": "ai", "source_user": "user_02" },
-    { "id": "b18", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img03", "type": "real", "source_user": null },
-    { "id": "b04", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img04", "type": "ai", "source_user": "user_02" },
-    { "id": "b19", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img04", "type": "real", "source_user": null },
-    { "id": "b05", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img05", "type": "ai", "source_user": "user_03" },
-    { "id": "b20", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img05", "type": "real", "source_user": null },
-    { "id": "b06", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img06", "type": "ai", "source_user": "user_03" },
-    { "id": "b21", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img06", "type": "real", "source_user": null },
-    { "id": "b07", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img07", "type": "ai", "source_user": "user_04" },
-    { "id": "b22", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img07", "type": "real", "source_user": null },
-    { "id": "b08", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img08", "type": "ai", "source_user": "user_04" },
-    { "id": "b23", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img08", "type": "real", "source_user": null },
-    { "id": "b09", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img09", "type": "ai", "source_user": "user_05" },
-    { "id": "b24", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img09", "type": "real", "source_user": null },
-    { "id": "b10", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img10", "type": "ai", "source_user": "user_05" },
-    { "id": "b25", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img10", "type": "real", "source_user": null },
-    { "id": "b11", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img11", "type": "ai", "source_user": "user_01" },
-    { "id": "b26", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img11", "type": "real", "source_user": null },
-    { "id": "b12", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img12", "type": "ai", "source_user": "user_02" },
-    { "id": "b27", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img12", "type": "real", "source_user": null },
-    { "id": "b13", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img13", "type": "ai", "source_user": "user_03" },
-    { "id": "b28", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img13", "type": "real", "source_user": null },
-    { "id": "b14", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img14", "type": "ai", "source_user": "user_04" },
-    { "id": "b29", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img14", "type": "real", "source_user": null },
-    { "id": "b15", "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img15", "type": "ai", "source_user": "user_05" },
-    { "id": "b30", "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img15", "type": "real", "source_user": null }
-  ]
+    {
+      "id": "b01",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img01",
+      "type": "ai",
+      "source_user": "user_01"
+    },
+    {
+      "id": "b16",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img01",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b02",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img02",
+      "type": "ai",
+      "source_user": "user_01"
+    },
+    {
+      "id": "b17",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img02",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b03",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img03",
+      "type": "ai",
+      "source_user": "user_02"
+    },
+    {
+      "id": "b18",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img03",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b04",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img04",
+      "type": "ai",
+      "source_user": "user_02"
+    },
+    {
+      "id": "b19",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img04",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b05",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img05",
+      "type": "ai",
+      "source_user": "user_03"
+    },
+    {
+      "id": "b20",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img05",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b06",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img06",
+      "type": "ai",
+      "source_user": "user_03"
+    },
+    {
+      "id": "b21",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img06",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b07",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img07",
+      "type": "ai",
+      "source_user": "user_04"
+    },
+    {
+      "id": "b22",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img07",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b08",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img08",
+      "type": "ai",
+      "source_user": "user_04"
+    },
+    {
+      "id": "b23",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img08",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b09",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img09",
+      "type": "ai",
+      "source_user": "user_05"
+    },
+    {
+      "id": "b24",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img09",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b10",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img10",
+      "type": "ai",
+      "source_user": "user_05"
+    },
+    {
+      "id": "b25",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img10",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b11",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img11",
+      "type": "ai",
+      "source_user": "user_01"
+    },
+    {
+      "id": "b26",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img11",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b12",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img12",
+      "type": "ai",
+      "source_user": "user_02"
+    },
+    {
+      "id": "b27",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img12",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b13",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img13",
+      "type": "ai",
+      "source_user": "user_03"
+    },
+    {
+      "id": "b28",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img13",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b14",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img14",
+      "type": "ai",
+      "source_user": "user_04"
+    },
+    {
+      "id": "b29",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img14",
+      "type": "real",
+      "source_user": null
+    },
+    {
+      "id": "b15",
+      "url": "https://placehold.co/600x800/f0f0f0/666?text=SectionB-Img15",
+      "type": "ai",
+      "source_user": "user_05"
+    },
+    {
+      "id": "b30",
+      "url": "https://placehold.co/600x800/e8f4f8/333?text=Real-Img15",
+      "type": "real",
+      "source_user": null
+    }
+  ],
+  "questionnaire_map": {
+    "user_01": [
+      "b01",
+      "b02",
+      "b11",
+      "b16",
+      "b17",
+      "b18",
+      "b03",
+      "b04",
+      "b05",
+      "b06"
+    ],
+    "user_02": [
+      "b03",
+      "b04",
+      "b12",
+      "b19",
+      "b20",
+      "b21",
+      "b05",
+      "b06",
+      "b07",
+      "b08"
+    ],
+    "user_03": [
+      "b05",
+      "b06",
+      "b13",
+      "b22",
+      "b23",
+      "b24",
+      "b07",
+      "b08",
+      "b09",
+      "b10"
+    ],
+    "user_04": [
+      "b07",
+      "b08",
+      "b14",
+      "b25",
+      "b26",
+      "b27",
+      "b09",
+      "b10",
+      "b11",
+      "b12"
+    ],
+    "user_05": [
+      "b09",
+      "b10",
+      "b15",
+      "b28",
+      "b29",
+      "b30",
+      "b11",
+      "b12",
+      "b13",
+      "b14"
+    ]
+  }
 }
